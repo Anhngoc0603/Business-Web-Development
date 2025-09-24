@@ -1,0 +1,35 @@
+<html>
+<head><title>Map - Ánh Ngọc</title></head>
+<body>
+  <canvas id="canvas"></canvas>
+  <script>
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const img = new Image();
+    img.src = "images/Map.jpg";
+    img.onload = () => {
+      canvas.width = img.width;
+      canvas.height = img.height;
+      ctx.drawImage(img, 0, 0);
+    };
+
+    canvas.addEventListener
+    ('click', function(e)
+    {
+      const rect = canvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      const pixel = ctx.getImageData(x, y, 1, 1).data;
+      if (pixel[0] > 200 && pixel[2] > 200) 
+            {parent.frames['content'].location.href = "West.html";} 
+      else if (pixel[0] > 200 && pixel[1] < 100) 
+            {parent.frames['content'].location.href = "Midwest.html";} 
+      else if (pixel[1] > 200 && pixel[0] < 100) 
+            {parent.frames['content'].location.href = "South.html";} 
+      else if (pixel[2] > 150 && pixel[0] < 100)
+            {parent.frames['content'].location.href = "Northeast.html";}
+    }
+    )
+  </script>
+</body>
+</html>
