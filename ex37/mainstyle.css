@@ -23,7 +23,7 @@ display:block;
 color:black; 
 font-weight:bold; 
 text-decoration:none; 
-padding:.3em 6px; 
+padding: 6px; 
 } 
 #container li a:hover 
 {color:white;
@@ -40,4 +40,5 @@ display:block;
 #container ul li ul li{  
 width:100%; 
 border:1px solid green  
+
 } 
