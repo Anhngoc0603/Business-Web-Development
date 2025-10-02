@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>Online Classifield - Ánh Ngọc</title>
+    <script>
+        function searchSim() {
+            document.getElementById("result").innerText = "Search ➔ Search simulation";
+        }
+
+        function helpSim() {
+            document.getElementById("result").innerText = "Help ➔ Displays 1 help page (Student optional)";
+        }
+
+        function cancelSim() {
+            document.getElementById("classifiedForm").reset();
+            document.getElementById("result").innerText = "Cancel ➔ clear data on Form";
+        }
+    </script>
+</head>
+<style>
+    body{background-color:aqua;}
+    h1{color:red;}
+    p{font-weight: bold;}
+    .bold-text{font-weight: bold;}
+</style>
+<body>
+    <h1>Online Classifields Search Form</h1>
+    <hr>
+    <form>
+        <p>1) Search for a classified in the following sections</p>
+            <table>
+                <tr>
+                    <td>
+                    <input type="radio" name="s" id="s1"/>
+                    <label for="s1">Employment</label>
+                    </td>
+                    <td>
+                    <input type="radio" name="s" id="s2"/>
+                    <label for="s2">Personal</label>
+                    </td>
+                <tr>
+                    <td>
+                    <input type="radio" name="s" id="s3"/>
+                    <label for="s3">For Sale</label>
+                    </td>
+                    <td>
+                    <input type="radio" name="s" id="s4"/>
+                    <label for="s4">Miscellanecus</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                    <input type="radio" name="s" id="s5"/>
+                    <label for="s5">Housing</label>
+                    </td>
+                    <td>
+                    <input type="radio" name="s" id="s5"/>
+                    <label for="s6">All of the above</label>
+                    </td>
+                </tr>
+            </table>
+        <p>2) Search the following publications</p>
+            <table>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="p1" id="p1"/>
+                        <label for="p1">Midwest times</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="p2" id="p2"/>
+                        <label for="p2">Modern News</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="p3" id="p3"/>
+                        <label for="p3">Employment Today</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="checkbox" name="p4" id="p4"/>
+                        <label for="p4">Great Lakes Classifieds</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="p5" id="p5"/>
+                        <label for="p5">Middleton Daily</label>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="p6" id="p6"/>
+                        <label for="p6">Cashtown Daily News</label>
+                    </td>
+                </tr>
+            </table>
+        <div>
+            <span class="bold-text">3) From to</span>
+            <input type="date" name="from"> to 
+            <input type="date" name="to">
+        </div>
+        <p>4) Enter a few keywords to describe the classified</p>
+            <input type="text" name="keywords" id="keywords" style="width:40%">
+        <p>5) Click one of the options below</p>
+        <div>
+            <img src="images/Search.gif" onclick="searchSim()" style="cursor:pointer;">
+            <img src="images/Help.gif" onclick="helpSim()" style="cursor:pointer;">
+            <img src="images/Cancel.gif" onclick="cancelSim()" style="cursor:pointer;">
+        </div>
+    </form>
+</body>
+</html>
