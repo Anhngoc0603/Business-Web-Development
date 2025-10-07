@@ -1,0 +1,55 @@
+<html>
+<head>
+    <title>Registration ex51 - Ánh Ngọc</title>
+    <link rel="stylesheet" type="text/css" href="mainstyle.css">
+</head>
+<body>
+    <div class="center">
+        <img src="images/Logo.gif">
+        <h1>Newborn Registration</h1>
+    </div>
+    <form>
+        <p>Date: <input type="text" id="date" name="date" placeholder="mm/dd/yyyy">
+        <p>1) Infant's first name:</label>
+                <input type="text" id="infant_first" name="infant_first" class="name-input">
+                <span class="label-text last-name-label">Last:</span>
+                <input type="text" id="infant_last" name="infant_last" class="name-input">
+        </p>
+        <p>2) Medical Record #:
+                <input type="text" id="medical_record" name="medical_record">
+        </p>
+        <p>3) Date of birth:
+            <input type="text" id="dob" name="dob" placeholder="mm/dd/yyyy">
+        </p>
+        <p>4) Birth weight:
+                <input type="text" id="birth_weight" name="birth_weight" >
+        </p>
+        <p>5) APGAR score:
+                <input type="text" id="apgar" name="apgar">
+        </p>
+        <p>6) Mother's first name:</label>
+                <input type="text" id="mother_first" name="mother_first">
+                <span class="label-text last-name-label">Last:</span>
+                <input type="text" id="mother_last" name="mother_last">
+        </p>
+        <p>7) Father's first name:</label>
+                <input type="text" id="father_first" name="father_first">
+                <span class="label-text last-name-label">Last:</span>
+                <input type="text" id="father_last" name="father_last">
+        </p>
+        <p>8) Physician (check all that apply):
+                <select id="physicians" name="physicians" multiple>
+                    <option value="albert">Dr. Warren Albert</option>
+                    <option value="alvarez">Dr. Maria Alvarez</option>
+                    <option value="brinkman">Dr. Karen Brinkman</option>
+                    <option value="kerry">Dr. Michael Kerry</option>
+                </select>
+        </p>
+            <div style="text-align:center">
+                <input type="submit" value="Register">
+                <input type="reset" value="Cancel">
+            </div>
+        </form>
+    </div>
+</body>
+</html>
