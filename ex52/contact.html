@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact the editorial office - Ánh Ngọc</title>
+    <style>
+        form {
+            width: 500px;
+            border: 1px solid #ccc;
+            padding: 20px;
+        }
+        input[type="text"], input[type="email"], select, textarea {
+            width: 100%;
+            padding: 8px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+        textarea {
+            height: 100px;
+        }
+        button {
+            background-color: #a04668;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #7d3652;
+        }
+    </style>
+</head>
+<body>
+
+    <h3>Contact the editorial office</h3>
+
+    <form action="result.html" method="get" name="contact">
+        <label>Full name</label>
+        <input type="text" name="fullname" id="fullname"> 
+
+        <label>Email</label>
+        <input type="email" name="email" id="email">
+
+        <label>Send to</label>
+        <select name="sendto" id="sendto">
+            <option>Editorial board</option>
+            <option>News Department</option>
+            <option>Board of Perspectives</option>
+            <option>World Board</option>
+            <option>Business Department</option>
+        </select>
+
+        <label>Title</label>
+        <input type="text" name="title" id="title">
+
+        <label>Content</label>
+        <textarea name="content" id="content"></textarea>
+
+        <button type="submit" onclick="saveinfor()">Send</button>
+    </form>
+
+</body>
+</html>

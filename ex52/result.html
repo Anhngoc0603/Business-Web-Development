@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Result Page - Ánh Ngọc</title>
+</head>
+<body>
+  <h2>Submitted Data</h2>
+
+  <p id="show_fullname"></p>
+  <p id="show_email"></p>
+  <p id="show_sendto"></p>
+  <p id="show_title"></p>
+  <p id="show_content"></p>
+
+  <script type="text/javascript">
+    function saveinfor() {
+      const params = new URLSearchParams(window.location.search);
+
+        document.getElementById("show_fullname").innerText =
+            "Full name: " + params.get("fullname");
+        document.getElementById("show_email").innerText =
+            "Email: " + params.get("email");
+        document.getElementById("show_sendto").innerText =
+            "Send to: " + params.get("sendto");
+        document.getElementById("show_title").innerText =
+            "Title: " + params.get("title");
+        document.getElementById("show_content").innerText =
+            "Content: " + params.get("content");
+    }
+saveinfor();
+  </script>
+</body>
+</html>
