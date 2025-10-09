@@ -1,0 +1,82 @@
+<html>
+    <head>
+        <title>List of products - Ánh Ngọc</title>
+        <script type="text/javascript">
+            function calculateTotal() 
+            {
+                priceC112 = 19.95;
+                priceB124 = 29.95;
+                priceU125 = 39.95;
+                qtyC112 = document.getElementById('qty1').value;
+                qtyB124 = document.getElementById('qty2').value;
+                qtyU125 = document.getElementById('qty3').value;
+                total = (qtyC112 * priceC112) + (qtyB124 * priceB124) + (qtyU125 * priceU125);
+                document.getElementById('sumtotal').value = total;
+            }
+        </script>
+        <style>
+            table {
+                    border-collapse: separate;   
+                    border-spacing: 15px 10px;
+                    width:100%   
+                    }
+            tr,td
+            {
+                text-align: center;
+            }
+        </style>
+    </head>
+    <body>
+        <form name="my_form">
+            <table>
+                <tr>
+                    <th>Part Number</th>
+                    <th>Description</th>
+                    <th>Price</th>
+                    <th>Qty</th>
+                    <th>Item Table</th>
+                </tr>
+                <tr>
+                    <td>C112</td>
+                    <td>Mouse</td>
+                    <td>19.95$</td>
+                    <td>
+                        <input type="text" name="qty1" id="qty1">
+                    </td>
+                    <td>
+                        <input type="text" name="item1" id="item1">
+                    </td>
+                </tr>
+                <tr>
+                    <td>B124</td>
+                    <td>Keyboard US</td>
+                    <td>29.95$</td>
+                    <td>
+                        <input type="text" name="qty2" id="qty2">
+                    </td>
+                    <td>
+                        <input type="text" name="item2" id="item2">
+                    </td>
+                </tr>
+                <tr>
+                    <td>U125</td>
+                    <td>USB KingMax</td>
+                    <td>39.95$</td>
+                    <td>
+                        <input type="text" name="qty3" id="qty3">
+                    </td>
+                    <td>
+                        <input type="text" name="item3" id="item3">
+                    </td>
+                </tr>
+            </table>
+            <hr/>
+            <div style="text-align: right;">
+                <label>Total:</label>
+                <input type="text" name="sumtotal" id="sumtotal">
+                <br>
+                <button type="button" onclick="calculateTotal()" style="background-color: rgb(255, 213, 0); border-color:orange ">Sum</button>
+            </div>
+        </form>
+    </body>
+</html>
