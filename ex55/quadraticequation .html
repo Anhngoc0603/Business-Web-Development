@@ -1,0 +1,83 @@
+<html>
+<head>
+    <title>The quadratic equation - Ánh Ngọc</title>
+    <script type="text/javascript">
+        function btn_solution()
+        {
+            a=my_form.td_a.value
+            b=my_form.td_b.value
+            c=my_form.td_c.value
+            result=my_form.td_result
+            if (a==0)
+                {
+                    if (b==0)
+                            {result.value="No solution!";}
+                    else 
+                            {result.value="x="+(-c/b);}
+                }
+            else
+                {
+                    delta = b*b - 4*a*c
+                    if (delta < 0)
+                                    {result.value="No real roots";}
+                    else if (delta==0)
+                                    {
+                                    x = -b / (2*a);
+                                    result.value="x1=x2="+x; 
+                                    }
+                    else
+                        {
+                            x1 = (-b - Math.sqrt(delta)) / (2*a);
+                            x2 = (-b + Math.sqrt(delta)) / (2*a);
+                            result.value="x1="+ x1 +"; x2="+ x2;
+                        }
+                }
+            
+        }
+        function btn_clear()
+        {
+            my_form.td_a.value="";
+            my_form.td_b.value="";
+            my_form.td_c.value="";
+            my_form.td_result.value="";
+        }
+    </script>
+</head>
+<body>
+    <form name="my_form">
+        <table border="1">
+            <tr>
+                <td>a:</td>
+                <td>
+                    <input type="text" name="td_a" id="td_a">
+                </td>
+            </tr>
+            <tr>
+                <td>b:</td>
+                <td>
+                    <input type="text" name="td_b" id="td_b">
+                </td>
+            </tr>
+            <tr>
+                <td>c:</td>
+                <td>
+                    <input type="text" name="td_c" id="td_c">
+                </td>
+            </tr>
+            <tr>
+                <td>Result:</td>
+                <td>
+                    <input type="text" name="td_result" id="td_result">
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <button type="button" onclick="btn_solution()">Find solution</button>
+                    <button type="button" onclick="btn_clear()">Clear</button>
+                </td> 
+            </tr>
+        </table>
+    </form>
+</body>
+</html>

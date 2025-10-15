@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Thestring processing - Ánh Ngọc</title>
+    <style>
+        textarea { width: 250px; height: 100px; }
+        button { width:100% }
+        td { padding: 5px; }
+    </style>
+    <script type="text/javascript">
+        function btn_enter() {
+            my_form.td_result.value = my_form.td_input.value;
+        }
+        function btn_upper() {
+            my_form.td_result.value = my_form.td_input.value.toUpperCase();
+        }
+        function btn_lower() {
+            my_form.td_result.value = my_form.td_input.value.toLowerCase();
+        }
+        function btn_countUpper() {
+            text = my_form.td_input.value;
+            count = text.replace(/[^A-Z]/g, "").length;
+            my_form.td_result.value = "Upper:" + count;
+        }
+        function btn_countLower() {
+            text = my_form.td_input.value;
+            count = text.replace(/[^a-z]/g, "").length;
+            my_form.td_result.value = "Lower:" + count;
+        }
+        function btn_oneWordPerLine() {
+            text = my_form.td_input.value.trim().split(/\s+/).join("\n");
+            my_form.td_result.value = text;
+        }
+        function btn_wordCount() {
+            text = my_form.td_input.value.trim();
+            if (text === "") {
+                my_form.td_result.value = "Word: 0";
+            } else {
+                count = text.split(/\s+/).length;
+                my_form.td_result.value = "Word:" + count;
+            }
+        }
+        function btn_print() {
+            text = my_form.td_input.value.toLowerCase();
+            vowels = text.match(/[aeiou]/g)?.length || 0;
+            consonants = text.match(/[bcdfghjklmnpqrstvwxyz]/g)?.length || 0;
+            my_form.td_result.value = "Vowels: " + vowels + " Consonants: " + consonants;
+        }
+        function btn_w3c() {
+            window.open("https://www.w3schools.com/js/js_string_methods.asp", "_blank");
+        }
+    </script>
+</head>
+<body>
+    <h3>USING STRING PROCESSING FUNCTIONS</h3>
+    <form name="my_form">
+        <table>
+            <tr>
+                <td>
+                    <fieldset>
+                        <legend>Input Data:</legend>
+                        <textarea name="td_input" id="td_input">
+                        </textarea>
+                    </fieldset>
+                </td>
+                <td>
+                    <fieldset>
+                        <legend>Result:</legend>
+                        <textarea name="td_result" id="td_result">
+                        </textarea>
+                    </fieldset>
+                </td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="btn_enter()">Enter Data</button></td>
+                <td><button type="button" onclick="btn_countUpper()">Count the number of uppercase characters</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="btn_upper()">Uppercase display</button></td>
+                <td><button type="button" onclick="btn_oneWordPerLine()">Output one word per line</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="btn_lower()">Lowercase display</button></td>
+                <td><button type="button" onclick="btn_wordCount()">Word count</button></td>
+            </tr>
+            <tr>
+                <td><button type="button" onclick="btn_countLower()">Count the number of lowercase characters</button></td>
+                <td><button type="button" onclick="btn_print()">Print vowels, consonants</button></td>
+            </tr>
+            <tr>
+                <td colspan="2"><button type="button" onclick="btn_w3c()">W3C's String Processing Website</button></td>
+            </tr>
+        </table>
+    </form>
+</body>
+</html>
