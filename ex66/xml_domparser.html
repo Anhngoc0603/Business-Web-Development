@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>XML-Dom Parser - Ánh Ngọc</title>
+</head>
+<body>
+    <table border="1" cellspacing="0" cellpadding="0" style="width:50%;">
+        <tr><td colspan="2" style="background:rgb(171, 255, 171);  text-align: center">Student Information</td></tr>
+        <tr cols="20%,20%">
+            <td>Student ID:</td> <td id="td_id"></td>
+        </tr>
+        <tr>
+            <td>Student Name:</td> <td id="td_name"></td>
+        </tr>
+        <tr>
+            <td>Birthday:</td> <td id="td_birthday"></td>
+        </tr>
+        <tr>
+            <td>Gender:</td> <td id="td_gender"></td>
+        </tr>
+    </table>
+    <script type="text/javascript">
+        var xhr= new XMLHttpRequest();
+        xhr.open("GET","datasets/student_info.xml",true);
+        xhr.send();
+        xhr.onreadystatechange=function()
+        {
+            if (xhr.readyState==4 && xhr.status==200)
+                {
+                    var xmlDoc=xhr.responseXML
+                    ID=xmlDoc.getElementsByTagName("id")[0].childNodes[0].nodeValue;
+                    Name=xmlDoc.getElementsByTagName("name")[0].childNodes[0].nodeValue;
+                    Birthday=xmlDoc.getElementsByTagName("birthday")[0].childNodes[0].nodeValue;
+                    Gender=xmlDoc.getElementsByTagName("gender")[0].childNodes[0].nodeValue;
+
+                    td_id.innerText=ID
+                    td_name.innerText=Name
+                    td_birthday.innerText=Birthday
+                    td_gender.innerText=Gender
+                }
+            else
+                {
+
+                }
+        }
+    </script>
+</body>
+</html>
